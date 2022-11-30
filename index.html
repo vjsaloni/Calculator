@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style media="screen">
+        .c1 {
+            width: 420px;
+            height: 400px;
+            background-color: red;
+        }
+        
+        button {
+            width: 21%;
+            height: 15%;
+            padding-top: 5px;
+            margin: 5px;
+            font-family: fantasy;
+            font-size: 20px;
+        }
+        
+        input {
+            font-size: 20px;
+            color: black;
+            font-family: fantasy;
+            text-align: right;
+            width: 95%;
+            padding: 12px 20px;
+            margin: 5px 5px 5px 5px;
+            box-sizing: border-box;
+        }
+        
+        .btn {
+            width: 46%;
+            height: 50px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="c1">
+        <input type="text " id="demo" value=""><br>
+        <button type="button" name="button" onclick="fun1()" class="btn">CE</button>
+        <button type="button" name="button" onclick="fun2()" class="btn">C</button><br>
+        <button type="button" name="button" onclick="fun(7)">7</button>
+        <button type="button" name="button" onclick="fun(8)">8</button>
+        <button type="button" name="button" onclick="fun(9)">9</button>
+        <button type="button" name="button" onclick="fun('/')">/</button><br>
+        <button type="button" name="button" onclick="fun(4)">4</button>
+        <button type="button" name="button" onclick="fun(5)">5</button>
+        <button type="button" name="button" onclick="fun(6)">6</button>
+        <button type="button" name="button" onclick="fun('*')">*</button><br>
+        <button type="button" name="button" onclick="fun(1)">1</button>
+        <button type="button" name="button" onclick="fun(2)">2</button>
+        <button type="button" name="button" onclick="fun(3)">3</button>
+        <button type="button" name="button" onclick="fun('+')">+</button><br>
+        <button type="button" name="button" onclick="fun('.')">.</button>
+        <button type="button" name="button" onclick="fun(0)">0</button>
+        <button type="button" name="button" onclick="fun('-')">-</button>
+        <button type="button" name="button" onclick="Solve()">=</button>
+    </div>
+    <script>
+        function fun(a) {
+            t = document.getElementById('demo').value;
+            document.getElementById('demo').value = t + a;
+
+        }
+
+        function Solve() {
+            t = document.getElementById('demo').value;
+            document.getElementById('demo').value = eval(t);
+        }
+
+        function fun1() {
+            t = document.getElementById('demo').value;
+            var s = ''
+            var i;
+            for (i = 0; i < t.length - 1; i++)
+                s = s + t[i];
+            document.getElementById('demo').value = s;
+        }
+
+        function fun2() {
+            document.getElementById('demo').value = ''
+        }
+    </script>
+</body>
+
+</html>
